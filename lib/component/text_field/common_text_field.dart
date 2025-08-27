@@ -48,7 +48,7 @@ class CommonTextField extends StatelessWidget {
   final double borderRadius;
   final int? mexLength;
   final bool isPassword;
-  RxBool obscureText = false.obs;
+  final RxBool obscureText = false.obs;
   final Function(String)? onSubmitted;
   final VoidCallback? onTap;
   final TextEditingController? controller;
