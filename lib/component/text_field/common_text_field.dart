@@ -12,6 +12,7 @@ class CommonTextField extends StatelessWidget {
     this.hintText,
     this.labelText,
     this.prefixIcon,
+    this.prefixIconData,
     this.isPassword = false,
     this.controller,
     this.textInputAction = TextInputAction.next,
@@ -37,6 +38,7 @@ class CommonTextField extends StatelessWidget {
   final String? labelText;
   final String? prefixText;
   final Widget? prefixIcon;
+  final IconData? prefixIconData;
   final Widget? suffixIcon;
   final Color? fillColor;
   final Color? labelTextColor;
@@ -75,7 +77,11 @@ class CommonTextField extends StatelessWidget {
       decoration: InputDecoration(
         errorMaxLines: 2,
         filled: true,
-        prefixIcon: prefixIcon,
+        prefixIcon:
+            prefixIcon ??
+            (prefixIconData != null
+                ? Icon(prefixIconData, color: hintTextColor)
+                : null),
         fillColor: fillColor,
         counterText: "",
         contentPadding: EdgeInsets.symmetric(
