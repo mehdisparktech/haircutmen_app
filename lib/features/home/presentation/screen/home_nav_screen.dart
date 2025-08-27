@@ -1,7 +1,9 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:haircutmen_app/component/image/common_image.dart';
+import 'package:haircutmen_app/component/text/common_text.dart';
 import 'package:haircutmen_app/features/appointment/presentation/screen/appointment_screen.dart';
 import 'package:haircutmen_app/features/favorite/presentation/screen/favorite_screen.dart';
 import 'package:haircutmen_app/features/home/presentation/controller/home_nav_controller.dart';
@@ -40,20 +42,67 @@ class HomeNavScreen extends StatelessWidget {
       builder: (controller) {
         return Scaffold(
           body: IndexedStack(index: controller.selectedIndex, children: _pages),
-          bottomNavigationBar: CurvedNavigationBar(
-            key: _bottomNavigationKey,
-            index: controller.selectedIndex,
-            backgroundColor: AppColors.transparent,
-            buttonBackgroundColor: AppColors.primaryColor,
-            color: AppColors.primaryColor,
-            items: List.generate(_icons.length, (index) {
-              return CommonImage(
-                imageSrc: _icons[index],
-                imageColor: Colors.white,
-                size: 24,
-              );
-            }),
-            onTap: controller.changeIndex,
+          bottomNavigationBar: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              CurvedNavigationBar(
+                key: _bottomNavigationKey,
+                index: controller.selectedIndex,
+                backgroundColor: AppColors.transparent,
+                buttonBackgroundColor: AppColors.primaryColor,
+                color: AppColors.primaryColor,
+                items: List.generate(_icons.length, (index) {
+                  return CommonImage(
+                    imageSrc: _icons[index],
+                    imageColor: Colors.white,
+                    size: 24,
+                  );
+                }),
+                onTap: controller.changeIndex,
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                width: double.infinity,
+                height: 30.h,
+                color: AppColors.primaryColor,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CommonText(
+                      text: "Home",
+                      fontSize: 14,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    CommonText(
+                      text: "Appointment",
+                      fontSize: 14,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    CommonText(
+                      text: "Scan",
+                      fontSize: 14,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    CommonText(
+                      text: "Favorite",
+                      fontSize: 14,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    CommonText(
+                      text: "Profile",
+                      fontSize: 14,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         );
       },
