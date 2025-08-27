@@ -1,4 +1,3 @@
-
 import 'package:get/get.dart';
 
 import '../../features/auth/change_password/presentation/controller/change_password_controller.dart';
@@ -12,6 +11,10 @@ import '../../features/profile/presentation/controller/profile_controller.dart';
 import '../../features/setting/presentation/controller/privacy_policy_controller.dart';
 import '../../features/setting/presentation/controller/setting_controller.dart';
 import '../../features/setting/presentation/controller/terms_of_services_controller.dart';
+import '../../features/home/presentation/controller/home_controller.dart';
+import '../../features/appointment/presentation/controller/appointment_controller.dart';
+import '../../features/scan/presentation/controller/scan_controller.dart';
+import '../../features/favorite/presentation/controller/favorite_controller.dart';
 
 class DependencyInjection extends Bindings {
   @override
@@ -27,5 +30,9 @@ class DependencyInjection extends Bindings {
     Get.lazyPut(() => SettingController(), fenix: true);
     Get.lazyPut(() => PrivacyPolicyController(), fenix: true);
     Get.lazyPut(() => TermsOfServicesController(), fenix: true);
+    Get.lazyPut(() => HomeController(), fenix: true);
+    Get.lazyPut(() => AppointmentController(), fenix: true);
+    Get.lazyPut(() => ScanController(), fenix: true);
+    Get.lazyPut(() => FavoriteController(), fenix: true);
   }
 }

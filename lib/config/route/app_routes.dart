@@ -16,6 +16,10 @@ import '../../features/setting/presentation/screen/privacy_policy_screen.dart';
 import '../../features/setting/presentation/screen/setting_screen.dart';
 import '../../features/setting/presentation/screen/terms_of_services_screen.dart';
 import '../../features/splash/splash_screen.dart';
+import '../../features/home/presentation/screen/home_screen.dart';
+import '../../features/appointment/presentation/screen/appointment_screen.dart';
+import '../../features/scan/presentation/screen/scan_screen.dart';
+import '../../features/favorite/presentation/screen/favorite_screen.dart';
 
 class AppRoutes {
   static const String test = "/test_screen.dart";
@@ -36,6 +40,10 @@ class AppRoutes {
   static const String privacyPolicy = "/privacy_policy_screen.dart";
   static const String termsOfServices = "/terms_of_services_screen.dart";
   static const String setting = "/setting_screen.dart";
+  static const String home = "/home_screen.dart";
+  static const String appointment = "/appointment_screen.dart";
+  static const String scan = "/scan_screen.dart";
+  static const String favorite = "/favorite_screen.dart";
 
   static List<GetPage> routes = [
     GetPage(name: splash, page: () => const SplashScreen()),
@@ -55,5 +63,9 @@ class AppRoutes {
     GetPage(name: privacyPolicy, page: () => const PrivacyPolicyScreen()),
     GetPage(name: termsOfServices, page: () => const TermsOfServicesScreen()),
     GetPage(name: setting, page: () => const SettingScreen()),
+    GetPage(name: home, page: () => const HomeScreen()),
+    GetPage(name: appointment, page: () => const AppointmentScreen()),
+    GetPage(name: scan, page: () => const ScanScreen()),
+    GetPage(name: favorite, page: () => const FavoriteScreen()),
   ];
 }
