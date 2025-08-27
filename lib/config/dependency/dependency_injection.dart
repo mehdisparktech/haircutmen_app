@@ -12,6 +12,7 @@ import '../../features/setting/presentation/controller/privacy_policy_controller
 import '../../features/setting/presentation/controller/setting_controller.dart';
 import '../../features/setting/presentation/controller/terms_of_services_controller.dart';
 import '../../features/home/presentation/controller/home_controller.dart';
+import '../../features/home/presentation/controller/home_nav_controller.dart';
 import '../../features/appointment/presentation/controller/appointment_controller.dart';
 import '../../features/scan/presentation/controller/scan_controller.dart';
 import '../../features/favorite/presentation/controller/favorite_controller.dart';
@@ -31,6 +32,7 @@ class DependencyInjection extends Bindings {
     Get.lazyPut(() => PrivacyPolicyController(), fenix: true);
     Get.lazyPut(() => TermsOfServicesController(), fenix: true);
     Get.lazyPut(() => HomeController(), fenix: true);
+    Get.lazyPut(() => HomeNavController(), fenix: true);
     Get.lazyPut(() => AppointmentController(), fenix: true);
     Get.lazyPut(() => ScanController(), fenix: true);
     Get.lazyPut(() => FavoriteController(), fenix: true);

@@ -1,0 +1,59 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:haircutmen_app/component/image/common_image.dart';
+import 'package:haircutmen_app/features/file/presentation/screen/file_screen.dart';
+import 'package:haircutmen_app/features/home/presentation/controller/home_nav_controller.dart';
+import 'package:haircutmen_app/features/home/presentation/screen/home_screen.dart';
+import 'package:haircutmen_app/utils/constants/app_icons.dart';
+import '../../../../utils/constants/app_colors.dart';
+import '../../../message/presentation/screen/chat_screen.dart';
+import '../../../profile/presentation/screen/profile_screen.dart';
+
+List<Widget> _pages = [
+  const HomeScreen(),
+  const ChatListScreen(),
+  const FileScreen(),
+  const ProfileScreen(),
+];
+
+List<String> _icons = [
+  AppIcons.home,
+  AppIcons.message,
+  AppIcons.myFile,
+  AppIcons.profile,
+];
+
+class HomeNavScreen extends StatelessWidget {
+  HomeNavScreen({super.key});
+
+  final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey =
+      GlobalKey<CurvedNavigationBarState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return GetBuilder<HomeNavController>(
+      init: HomeNavController(),
+      builder: (controller) {
+        return Scaffold(
+          body: IndexedStack(index: controller.selectedIndex, children: _pages),
+          bottomNavigationBar: CurvedNavigationBar(
+            key: _bottomNavigationKey,
+            index: controller.selectedIndex,
+            backgroundColor: AppColors.transparent,
+            buttonBackgroundColor: AppColors.primaryColor,
+            color: AppColors.primaryColor,
+            items: List.generate(_icons.length, (index) {
+              return CommonImage(
+                imageSrc: _icons[index],
+                imageColor: Colors.white,
+                size: 24,
+              );
+            }),
+            onTap: controller.changeIndex,
+          ),
+        );
+      },
+    );
+  }
+}

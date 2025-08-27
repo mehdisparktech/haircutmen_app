@@ -24,7 +24,7 @@ class CommonButton extends StatefulWidget {
     this.titleColor = AppColors.white,
     this.buttonColor = AppColors.primaryColor,
     this.titleSize = 16,
-    this.buttonRadius = 10,
+    this.buttonRadius = 4,
     this.titleWeight = FontWeight.w700,
     this.buttonHeight = 48,
     this.borderWidth = 1,

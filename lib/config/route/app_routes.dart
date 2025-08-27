@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:haircutmen_app/features/setting/presentation/screen/privacy_policy_screen.dart';
 import '../../features/auth/change_password/presentation/screen/change_password_screen.dart';
 import '../../features/auth/forgot password/presentation/screen/create_password.dart';
 import '../../features/auth/forgot password/presentation/screen/forgot_password.dart';
@@ -12,11 +13,11 @@ import '../../features/notifications/presentation/screen/notifications_screen.da
 import '../../features/onboarding_screen/onboarding_screen.dart';
 import '../../features/profile/presentation/screen/edit_profile.dart';
 import '../../features/profile/presentation/screen/profile_screen.dart';
-import '../../features/setting/presentation/screen/privacy_policy_screen.dart';
 import '../../features/setting/presentation/screen/setting_screen.dart';
 import '../../features/setting/presentation/screen/terms_of_services_screen.dart';
 import '../../features/splash/splash_screen.dart';
 import '../../features/home/presentation/screen/home_screen.dart';
+import '../../features/home/presentation/screen/home_nav_screen.dart';
 import '../../features/appointment/presentation/screen/appointment_screen.dart';
 import '../../features/scan/presentation/screen/scan_screen.dart';
 import '../../features/favorite/presentation/screen/favorite_screen.dart';
@@ -41,6 +42,7 @@ class AppRoutes {
   static const String termsOfServices = "/terms_of_services_screen.dart";
   static const String setting = "/setting_screen.dart";
   static const String home = "/home_screen.dart";
+  static const String homeNav = "/home_nav_screen.dart";
   static const String appointment = "/appointment_screen.dart";
   static const String scan = "/scan_screen.dart";
   static const String favorite = "/favorite_screen.dart";
@@ -60,10 +62,11 @@ class AppRoutes {
     GetPage(name: message, page: () => const MessageScreen()),
     GetPage(name: profile, page: () => const ProfileScreen()),
     GetPage(name: editProfile, page: () => EditProfile()),
-    GetPage(name: privacyPolicy, page: () => const PrivacyPolicyScreen()),
-    GetPage(name: termsOfServices, page: () => const TermsOfServicesScreen()),
+    GetPage(name: privacyPolicy, page: () => PrivacyPolicyScreen()),
+    GetPage(name: termsOfServices, page: () => TermsOfServicesScreen()),
     GetPage(name: setting, page: () => const SettingScreen()),
     GetPage(name: home, page: () => const HomeScreen()),
+    GetPage(name: homeNav, page: () => HomeNavScreen()),
     GetPage(name: appointment, page: () => const AppointmentScreen()),
     GetPage(name: scan, page: () => const ScanScreen()),
     GetPage(name: favorite, page: () => const FavoriteScreen()),

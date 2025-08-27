@@ -52,4 +52,16 @@ class AppColors {
   static const Color black700 = Color(0xFF515151);
   static const Color black800 = Color(0xFF3B3B3B);
   static const Color black900 = Color(0xFF222222);
+
+  // Violet Color Palette
+  static const Color violet50 = Color(0xFFF5F3FF);
+  static const Color violet100 = Color(0xFFEDE9FE);
+  static const Color violet200 = Color(0xFFDDD6FE);
+  static const Color violet300 = Color(0xFFC4B5FD);
+  static const Color violet400 = Color(0xFFA78BFA);
+  static const Color violet500 = Color(0xFF8B5CF6);
+  static const Color violet600 = Color(0xFF7C3AED);
+  static const Color violet700 = Color(0xFF6D28D9);
+  static const Color violet800 = Color(0xFF5B21B6);
+  static const Color violet900 = Color(0xFF4C1D95);
 }
