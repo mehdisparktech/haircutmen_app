@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../screen/service_details_screen.dart';
 
 class HomeController extends GetxController {
   final TextEditingController searchController = TextEditingController();
@@ -94,7 +95,7 @@ class HomeController extends GetxController {
 
   void onProviderTap(Map<String, dynamic> provider) {
     // Navigate to provider details
-    // Get.toNamed(AppRoutes.providerDetails, arguments: provider);
+    Get.to(() => const ServiceDetailsScreen(), arguments: provider);
   }
 
   void onFavoriteTap(Map<String, dynamic> provider) {

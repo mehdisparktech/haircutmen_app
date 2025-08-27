@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:haircutmen_app/features/home/presentation/controller/service_details_controller.dart';
 
 import '../../features/auth/change_password/presentation/controller/change_password_controller.dart';
 import '../../features/auth/forgot password/presentation/controller/forget_password_controller.dart';
@@ -36,5 +37,6 @@ class DependencyInjection extends Bindings {
     Get.lazyPut(() => AppointmentController(), fenix: true);
     Get.lazyPut(() => ScanController(), fenix: true);
     Get.lazyPut(() => FavoriteController(), fenix: true);
+    Get.lazyPut(() => ServiceDetailsController(), fenix: true);
   }
 }
