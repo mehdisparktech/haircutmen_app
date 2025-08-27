@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../../../config/route/app_routes.dart';
-import '../../../../component/bottom_nav_bar/common_bottom_bar.dart';
 import '../../../../component/other_widgets/common_loader.dart';
 import '../../../../component/screen/error_screen.dart';
 import '../../../../component/text/common_text.dart';
@@ -82,9 +81,6 @@ class ChatListScreen extends StatelessWidget {
               ),
             },
       ),
-
-      /// Bottom Navigation Bar Section Starts here
-      bottomNavigationBar: const CommonBottomNavBar(currentIndex: 2),
     );
   }
 }

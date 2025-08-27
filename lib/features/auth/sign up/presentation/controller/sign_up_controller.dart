@@ -48,11 +48,14 @@ class SignUpController extends GetxController {
   TextEditingController confirmPasswordController = TextEditingController(
     text: kDebugMode ? 'hello123' : '',
   );
-  TextEditingController numberController = TextEditingController(
+  TextEditingController phoneNumberController = TextEditingController(
     text: kDebugMode ? '1865965581' : '',
   );
   TextEditingController otpController = TextEditingController(
     text: kDebugMode ? '123456' : '',
+  );
+  TextEditingController locationController = TextEditingController(
+    text: kDebugMode ? 'Dhaka' : '',
   );
 
   @override
@@ -84,7 +87,7 @@ class SignUpController extends GetxController {
     Map<String, String> body = {
       "fullName": nameController.text,
       "email": emailController.text,
-      "phoneNumber": numberController.text,
+      "phoneNumber": phoneNumberController.text,
       "countryCode": countryCode,
       "password": passwordController.text,
       "role": selectRole.toLowerCase(),
@@ -122,7 +125,7 @@ class SignUpController extends GetxController {
   }
 
   Future<void> verifyOtpRepo() async {
-    Get.toNamed(AppRoutes.signIn);
+    Get.offAllNamed(AppRoutes.signIn);
     return;
 
     isLoadingVerify = true;

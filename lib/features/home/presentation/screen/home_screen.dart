@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
       init: HomeController(),
       builder: (controller) {
         return Scaffold(
-          appBar: AppBar(title: const Text('Home')),
+          appBar: AppBar(title: const Text('Home'), leading: SizedBox()),
           body: const Center(child: Text('Home Screen')),
         );
       },

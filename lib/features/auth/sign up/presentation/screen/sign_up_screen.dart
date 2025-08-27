@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:haircutmen_app/utils/constants/app_colors.dart';
 import '../../../../../../utils/extensions/extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -22,36 +23,71 @@ class SignUpScreen extends StatelessWidget {
       body: GetBuilder<SignUpController>(
         builder: (controller) {
           return SingleChildScrollView(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            child: Form(
-              key: controller.signUpFormKey,
-              child: Column(
-                children: [
-                  /// Sign UP Instructions here
-                  const CommonText(
-                    text: AppString.createYourAccount,
-                    fontSize: 32,
-                    bottom: 20,
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
+            child: Column(
+              children: [
+                /// Logo text here
+                const CommonText(
+                  text: AppString.logoText,
+                  fontSize: 24,
+                  color: AppColors.primaryColor,
+                  fontWeight: FontWeight.w600,
+                  maxLines: 2,
+                  bottom: 20,
+                ).center,
+
+                /// Sign Up Container here
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 10.h,
                   ),
-
-                  /// All Text Filed here
-                  SignUpAllField(controller: controller),
-
-                  16.height,
-
-                  /// Submit Button Here
-                  CommonButton(
-                    titleText: AppString.signUp,
-                    isLoading: controller.isLoading,
-                    onTap: controller.signUpUser,
+                  decoration: BoxDecoration(
+                    color: AppColors.white,
+                    borderRadius: BorderRadius.circular(20.r),
+                    border: Border.all(color: AppColors.black50),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0x408E8E8E),
+                        blurRadius: 6,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
                   ),
-                  24.height,
+                  child: Form(
+                    key: controller.signUpFormKey,
+                    child: Column(
+                      children: [
+                        /// Sign UP Instructions here
+                        const CommonText(
+                          text: AppString.signUp,
+                          fontSize: 24,
+                          color: AppColors.primaryColor,
+                          fontWeight: FontWeight.w400,
+                          bottom: 20,
+                        ).center,
 
-                  ///  Sign In Instruction here
-                  const AlreadyAccountRichText(),
-                  30.height,
-                ],
-              ),
+                        /// All Text Filed here
+                        SignUpAllField(controller: controller),
+
+                        16.height,
+
+                        /// Submit Button Here
+                        CommonButton(
+                          titleText: AppString.confirm,
+                          isLoading: controller.isLoading,
+                          onTap: controller.signUpUser,
+                        ),
+                        24.height,
+
+                        ///  Sign In Instruction here
+                        const AlreadyAccountRichText(),
+                        30.height,
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           );
         },

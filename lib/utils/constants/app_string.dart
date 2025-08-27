@@ -16,6 +16,7 @@ class AppString {
   static const String someThingWrong = "Some Thing Wrong";
   static const String tryAgain = "Try Again";
   static const String phoneNumber = "Phone Number";
+  static const String location = "Location";
   static const String test = "Test";
   static const String changePassword = "Change Password";
   static const String currentPassword = "Current Password";
@@ -34,12 +35,15 @@ class AppString {
   static const String resendCodeIn = "Resend code in";
   static const String minute = "minute";
   static const String verify = "Verify";
+  static const String verifyNow = "Verify Now";
   static const String logIntoYourAccount = "Login to Your Account";
+  static const String logoText = "TvojeVreme\nPartner";
   static const String forgotThePassword = "Forgot the password";
   static const String signIn = "Sign in";
-  static const String doNotHaveAccount = "Don’t have an account";
+  static const String login = "Log In";
+  static const String doNotHaveAccount = "Don’t have an account? ";
   static const String signUp = "Sign up";
-  static const String alreadyHaveAccount = "Already have an account";
+  static const String alreadyHaveAccount = "Already have an account? ";
   static const String fullName = "Full Name";
   static const String createYourAccount = "Create Your Account";
   static const String otpVerify = "OTP Verify";
@@ -71,4 +75,26 @@ class AppString {
   static const String thePasswordDoesNotMatch = "The password does not match";
   static const String startServer = "Please, start the Server";
   static const String unknownError = "Unknown Error";
+
+  // Language
+  static const String language = "Language";
+
+  // Terms of Service
+  static const String termsOfService = "Terms of Service";
+
+  // Personal Information
+  static const String personalInformation = "Personal Information";
+
+  // My Balance
+  static const String myBalance = "My Balance";
+
+  // Contact Support
+  static const String contactSupport = "Contact & Support";
+
+  // OTP Title
+  static const String otpTitle = "Verify your email";
+
+  // Enter your email to reset password
+  static const String enterYourEmailToResetPassword =
+      "Enter your email to reset password";
 }

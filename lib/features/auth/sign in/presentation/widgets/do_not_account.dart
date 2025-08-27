@@ -19,8 +19,8 @@ class DoNotHaveAccount extends StatelessWidget {
           TextSpan(
             text: AppString.doNotHaveAccount,
             style: GoogleFonts.plusJakartaSans(
-              color: AppColors.secondary,
-              fontSize: 16,
+              color: AppColors.primaryColor,
+              fontSize: 14,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -35,7 +35,7 @@ class DoNotHaveAccount extends StatelessWidget {
                   },
             style: GoogleFonts.plusJakartaSans(
               color: AppColors.primaryColor,
-              fontSize: 16,
+              fontSize: 14,
               fontWeight: FontWeight.w600,
             ),
           ),

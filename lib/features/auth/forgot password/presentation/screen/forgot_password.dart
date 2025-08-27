@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:haircutmen_app/utils/constants/app_colors.dart';
 import '../../../../../../utils/extensions/extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -20,49 +21,86 @@ class ForgotPasswordScreen extends StatelessWidget {
       builder:
           (controller) => Scaffold(
             /// App Bar Section
-            appBar: AppBar(
-              title: const CommonText(
-                text: AppString.forgotPassword,
-                fontWeight: FontWeight.w700,
-                fontSize: 24,
-              ),
-            ),
+            appBar: AppBar(),
 
             /// body section
             body: SingleChildScrollView(
               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
-              child: Form(
-                key: formKey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    /// forget password take email for reset Password
-                    const CommonText(text: AppString.email, bottom: 8, top: 80),
-                    CommonTextField(
-                      controller: controller.emailController,
-                      prefixIcon: const Icon(Icons.mail),
-                      hintText: AppString.email,
-                      validator: OtherHelper.emailValidator,
+              child: Column(
+                children: [
+                  /// Logo text here
+                  const CommonText(
+                    text: AppString.logoText,
+                    fontSize: 24,
+                    color: AppColors.primaryColor,
+                    fontWeight: FontWeight.w600,
+                    maxLines: 2,
+                    bottom: 20,
+                  ).center,
+
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10.w,
+                      vertical: 10.h,
                     ),
-                    100.height,
-                  ],
-                ),
-              ),
-            ),
+                    decoration: BoxDecoration(
+                      color: AppColors.white,
+                      borderRadius: BorderRadius.circular(20.r),
+                      border: Border.all(color: AppColors.black50),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0x408E8E8E),
+                          blurRadius: 6,
+                          offset: Offset(0, 2),
+                        ),
+                      ],
+                    ),
+                    child: Form(
+                      key: formKey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          /// OTP Title here
+                          CommonText(
+                            text: AppString.forgotPassword,
+                            fontSize: 18,
+                            bottom: 10,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.primaryColor,
+                          ).center,
 
-            /// Bottom Navigation Bar Section
-            bottomNavigationBar: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+                          /// subtitle here
+                          CommonText(
+                            text: AppString.enterYourEmailToResetPassword,
+                            fontSize: 14,
+                            bottom: 20,
+                            fontWeight: FontWeight.w400,
+                          ).center,
 
-              /// Submit Button
-              child: CommonButton(
-                titleText: AppString.continues,
-                isLoading: controller.isLoadingEmail,
-                onTap: () {
-                  if (formKey.currentState!.validate()) {
-                    controller.forgotPasswordRepo();
-                  }
-                },
+                          /// forget password take email for reset Password
+                          const CommonText(text: AppString.email, bottom: 8),
+                          CommonTextField(
+                            controller: controller.emailController,
+                            hintText: AppString.email,
+                            validator: OtherHelper.emailValidator,
+                          ),
+                          20.height,
+
+                          /// Submit Button here
+                          CommonButton(
+                            titleText: AppString.verifyNow,
+                            isLoading: controller.isLoadingEmail,
+                            onTap: () {
+                              if (formKey.currentState!.validate()) {
+                                controller.forgotPasswordRepo();
+                              }
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

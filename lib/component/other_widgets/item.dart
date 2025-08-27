@@ -30,35 +30,48 @@ class Item extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: horizontal.w,
-          vertical: vertical.h,
-        ),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                icon != null
-                    ? Icon(icon, color: color)
-                    : CommonImage(imageSrc: image),
-                CommonText(
-                  text: title,
-                  color: color,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 18,
-                  left: 16,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+          decoration: BoxDecoration(
+            color: AppColors.white,
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(color: AppColors.black50),
+            boxShadow: [
+              BoxShadow(
+                color: Color(0x408E8E8E),
+                blurRadius: 6,
+                offset: Offset(0, 2),
+              ),
+            ],
+          ),
+          child: Row(
+            children: [
+              Container(
+                width: 40.w,
+                height: 40.h,
+                decoration: BoxDecoration(
+                  color: AppColors.black50,
+                  borderRadius: BorderRadius.circular(100),
                 ),
-                const Spacer(),
-                disableIcon
-                    ? const SizedBox()
-                    : Icon(Icons.arrow_forward_ios_outlined, size: 20.sp),
-              ],
-            ),
-            disableDivider ? const SizedBox() : const Divider(),
-          ],
+                child:
+                    disableIcon
+                        ? CommonImage(imageSrc: image)
+                        : Icon(icon, color: AppColors.black, size: 24),
+              ),
+              SizedBox(width: 16.w),
+              CommonText(
+                text: title,
+                color: color,
+                fontWeight: FontWeight.w400,
+                fontSize: 18,
+                left: 16,
+              ),
+            ],
+          ),
         ),
       ),
     );

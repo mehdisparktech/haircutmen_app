@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../../../../component/bottom_nav_bar/common_bottom_bar.dart';
 import '../../../../component/other_widgets/common_loader.dart';
 import '../../../../component/other_widgets/no_data.dart';
 import '../../../../component/text/common_text.dart';
@@ -60,9 +59,6 @@ class NotificationScreen extends StatelessWidget {
               );
         },
       ),
-
-      /// Bottom Navigation Bar Section starts here
-      bottomNavigationBar: const CommonBottomNavBar(currentIndex: 1),
     );
   }
 }

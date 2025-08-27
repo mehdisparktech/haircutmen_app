@@ -6,13 +6,15 @@ class AppColors {
 
   // Existing Colors
   static const Color secondary = Color(0xff454545);
-  static const Color background = Color(0xFFFAFAFA);
+  static const Color background = Color(0xFFFFFFFF);
   static const Color transparent = Colors.transparent;
   static const Color white = Colors.white;
   static const Color black = Colors.black;
+  static const Color textColor = Color(0xFF333333);
   static const Color filledColor = Color(0xFFe7e7e7);
   static const Color textFiledColor = Color(0xFF979797);
   static const Color blueLight = Color(0xffe8e8f5);
+  static const Color gray = Color(0xff3a3a3a);
 
   // Red Color Palette
   static const Color red50 = Color(0xFFFFF5F5);
@@ -42,7 +44,7 @@ class AppColors {
   static const Color white900 = Color(0xFF999999);
 
   // Black Color Palette
-  static const Color black50 = Color(0xFFF7F7F7);
+  static const Color black50 = Color(0xFFe6e6e6);
   static const Color black100 = Color(0xFFE1E1E1);
   static const Color black200 = Color(0xFFCFCFCF);
   static const Color black300 = Color(0xFFB1B1B1);

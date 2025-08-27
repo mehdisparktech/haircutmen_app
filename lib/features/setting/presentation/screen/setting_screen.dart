@@ -3,7 +3,6 @@ import '../../../../../config/route/app_routes.dart';
 import '../../../../../utils/extensions/extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../../../../component/bottom_nav_bar/common_bottom_bar.dart';
 import '../../../../component/pop_up/common_pop_menu.dart';
 import '../../../../component/text/common_text.dart';
 import '../controller/setting_controller.dart';
@@ -71,26 +70,22 @@ class SettingScreen extends StatelessWidget {
                         onTap: controller.deleteAccountRepo,
                         isLoading: controller.isLoading,
                       ),
-                  child: Container(
-                    height: 52.h,
-                    padding: EdgeInsets.symmetric(horizontal: 20.w),
-                    decoration: BoxDecoration(
-                      color: AppColors.blueLight,
-                      borderRadius: BorderRadius.circular(4.r),
-                    ),
-                    child: Row(
-                      children: [
-                        const Icon(
-                          Icons.delete_outline_rounded,
-                          color: AppColors.secondary,
-                        ),
-                        CommonText(
-                          text: AppString.deleteAccount,
-                          color: AppColors.secondary,
-                          left: 12.w,
-                        ),
-                      ],
-                    ),
+                  child: const SettingItem(
+                    title: AppString.deleteAccount,
+                    iconDate: Icons.delete_outline_rounded,
+                    iconColor: AppColors.primaryColor,
+                    titleColor: AppColors.primaryColor,
+                  ),
+                ),
+
+                /// Log Out Item here
+                InkWell(
+                  onTap: () => logOutPopUp,
+                  child: const SettingItem(
+                    title: AppString.logOut,
+                    iconDate: Icons.logout,
+                    iconColor: AppColors.primaryColor,
+                    titleColor: AppColors.primaryColor,
                   ),
                 ),
               ],
@@ -98,9 +93,6 @@ class SettingScreen extends StatelessWidget {
           );
         },
       ),
-
-      /// Bottom Navigation Bar Section starts here
-      bottomNavigationBar: const CommonBottomNavBar(currentIndex: 0),
     );
   }
 }

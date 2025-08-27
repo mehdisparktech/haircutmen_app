@@ -2,25 +2,28 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:haircutmen_app/component/image/common_image.dart';
-import 'package:haircutmen_app/features/file/presentation/screen/file_screen.dart';
+import 'package:haircutmen_app/features/appointment/presentation/screen/appointment_screen.dart';
+import 'package:haircutmen_app/features/favorite/presentation/screen/favorite_screen.dart';
 import 'package:haircutmen_app/features/home/presentation/controller/home_nav_controller.dart';
 import 'package:haircutmen_app/features/home/presentation/screen/home_screen.dart';
+import 'package:haircutmen_app/features/scan/presentation/screen/scan_screen.dart';
 import 'package:haircutmen_app/utils/constants/app_icons.dart';
 import '../../../../utils/constants/app_colors.dart';
-import '../../../message/presentation/screen/chat_screen.dart';
 import '../../../profile/presentation/screen/profile_screen.dart';
 
 List<Widget> _pages = [
   const HomeScreen(),
-  const ChatListScreen(),
-  const FileScreen(),
+  const AppointmentScreen(),
+  const ScanScreen(),
+  const FavoriteScreen(),
   const ProfileScreen(),
 ];
 
 List<String> _icons = [
   AppIcons.home,
-  AppIcons.message,
-  AppIcons.myFile,
+  AppIcons.appointment,
+  AppIcons.scan,
+  AppIcons.favorite,
   AppIcons.profile,
 ];
 
